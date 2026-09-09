@@ -1,0 +1,28 @@
+# Dataset — keep out of version control.
+# ISCXVPN2016 is licensed from UNB/CIC and must be obtained from them directly:
+# https://www.unb.ca/cic/datasets/vpn.html
+/data/*
+!/data/.gitkeep
+
+# Figures are committed so the repository carries the evidence for the report.
+# To exclude them instead, uncomment the two lines below.
+# /results/*
+# !/results/.gitkeep
+
+# Model artifacts
+*.pkl
+*.joblib
+*.model
+*.pcap
+
+# Python / conda
+__pycache__/
+*.pyc
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
