@@ -1,0 +1,48 @@
+{
+  "python": "3.11.15",
+  "xgboost": "3.2.0",
+  "scikit_learn": "1.9.0",
+  "seed": 42,
+  "n_flows_raw": 18758,
+  "n_flows_clean": 18036,
+  "n_features": 15,
+  "features": [
+    "duration",
+    "flowPktsPerSecond",
+    "flowBytesPerSecond",
+    "min_flowiat",
+    "max_flowiat",
+    "mean_flowiat",
+    "std_flowiat",
+    "min_active",
+    "mean_active",
+    "max_active",
+    "std_active",
+    "min_idle",
+    "mean_idle",
+    "max_idle",
+    "std_idle"
+  ],
+  "excluded_features": [
+    "total_fiat",
+    "total_biat",
+    "min_fiat",
+    "min_biat",
+    "max_fiat",
+    "max_biat",
+    "mean_fiat",
+    "mean_biat"
+  ],
+  "best_params": {
+    "subsample": 0.8,
+    "reg_lambda": 1,
+    "n_estimators": 600,
+    "min_child_weight": 3,
+    "max_depth": 8,
+    "learning_rate": 0.05,
+    "gamma": 0.1,
+    "colsample_bytree": 0.7
+  },
+  "cv_roc_auc": 0.9642,
+  "test_roc_auc": 0.9653
+}

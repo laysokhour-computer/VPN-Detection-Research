@@ -1,0 +1,97 @@
+<mxfile host="app.diagrams.net" agent="ENGE817" version="24.0.0">
+  <diagram name="Research methodology" id="methodology">
+    <mxGraphModel dx="800" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="660" pageHeight="1020" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Preprocessing container, drawn first so it sits behind -->
+        <mxCell id="grp" value="4.2  Preprocessing" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=6 4;fillColor=#f7f9fb;strokeColor=#aebac6;verticalAlign=top;align=left;spacingLeft=14;spacingTop=8;fontSize=12;fontStyle=1;fontColor=#5b6b7a;" vertex="1" parent="1">
+          <mxGeometry x="60" y="150" width="540" height="330" as="geometry" />
+        </mxCell>
+
+        <!-- Data source -->
+        <mxCell id="data" value="&lt;b&gt;ISCXVPN2016&lt;/b&gt;&lt;br&gt;Scenario A1, 15-second flow timeout&lt;br&gt;&lt;font color=&quot;#66788a&quot;&gt;secondary data · quantitative&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#66788a&quot;&gt;18,758 flows · 23 features&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e9edf2;strokeColor=#8fa3b5;fontSize=11;verticalAlign=middle;spacing=4;" vertex="1" parent="1">
+          <mxGeometry x="170" y="30" width="320" height="86" as="geometry" />
+        </mxCell>
+
+        <!-- Preprocessing steps -->
+        <mxCell id="p1" value="&lt;b&gt;4.2.1&lt;/b&gt;&#160; Undefined values &#8212; recode &#8722;1 as missing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#aebac6;fontSize=11;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="90" y="192" width="480" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="&lt;b&gt;4.2.2&lt;/b&gt;&#160; Outlier treatment &#8212; remove 532 empty records" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#aebac6;fontSize=11;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="90" y="238" width="480" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="&lt;b&gt;4.2.3&lt;/b&gt;&#160; Duplicate records &#8212; remove 190 exact duplicates" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#aebac6;fontSize=11;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="90" y="284" width="480" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" value="&lt;b&gt;4.2.4&lt;/b&gt;&#160; Feature validity &#8212; exclude 8 unverifiable columns" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf0e7;strokeColor=#DD8452;fontSize=11;align=left;spacingLeft=14;fontColor=#a8512a;" vertex="1" parent="1">
+          <mxGeometry x="90" y="330" width="480" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p5" value="&lt;b&gt;4.2.5&lt;/b&gt;&#160; Label encoding &#8212; VPN = 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#aebac6;fontSize=11;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="90" y="376" width="480" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="p6" value="&lt;b&gt;4.2.6&lt;/b&gt;&#160; Stratified 80:20 split" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#aebac6;fontSize=11;align=left;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="90" y="422" width="480" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note" value="18,036 flows &#183; 15 features" style="text;html=1;fontSize=10;fontColor=#8a99a8;align=center;" vertex="1" parent="1">
+          <mxGeometry x="240" y="486" width="180" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Partitions -->
+        <mxCell id="train" value="&lt;b&gt;Training set&lt;/b&gt;&lt;br&gt;14,428 flows" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C72B0;strokeColor=none;fontColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="90" y="516" width="215" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="test" value="&lt;b&gt;Test set&lt;/b&gt;&lt;br&gt;3,608 flows&lt;br&gt;&lt;i&gt;examined once, at the end&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fbe9de;strokeColor=#DD8452;dashed=1;dashPattern=5 3;fontColor=#a8512a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="355" y="516" width="215" height="54" as="geometry" />
+        </mxCell>
+
+        <!-- Modelling -->
+        <mxCell id="m1" value="&lt;b&gt;4.3&#160; Model&lt;/b&gt;&lt;br&gt;Baseline XGBoost, library defaults" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#8fa3b5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="78" y="616" width="240" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="m2" value="Randomised search, 60 configurations&lt;br&gt;scored by five-fold cross-validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#8fa3b5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="78" y="690" width="240" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="m3" value="&lt;b&gt;Final model&lt;/b&gt;&lt;br&gt;600 trees, maximum depth 8" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4C72B0;strokeColor=none;fontColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="78" y="764" width="240" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- Evaluation -->
+        <mxCell id="ev" value="&lt;b&gt;4.4&#160; Evaluation&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e9edf2;strokeColor=#8fa3b5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="195" y="858" width="270" height="42" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sq1" value="&lt;b&gt;SQ1 &#8212; detection&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#5b6b7a&quot;&gt;accuracy, precision, recall,&lt;br&gt;F1, ROC-AUC, confusion matrix&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4C72B0;fontSize=10.5;" vertex="1" parent="1">
+          <mxGeometry x="60" y="944" width="250" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="sq2" value="&lt;b&gt;SQ2 &#8212; feature contribution&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#5b6b7a&quot;&gt;gain, permutation, SHAP,&lt;br&gt;compared with univariate separation&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4C72B0;fontSize=10.5;" vertex="1" parent="1">
+          <mxGeometry x="350" y="944" width="250" height="62" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="e0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8fa3b5;endArrow=block;endFill=1;" edge="1" parent="1" source="data" target="p1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#c2ccd6;endArrow=block;endFill=1;" edge="1" parent="1" source="p1" target="p2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#c2ccd6;endArrow=block;endFill=1;" edge="1" parent="1" source="p2" target="p3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#c2ccd6;endArrow=block;endFill=1;" edge="1" parent="1" source="p3" target="p4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#c2ccd6;endArrow=block;endFill=1;" edge="1" parent="1" source="p4" target="p5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#c2ccd6;endArrow=block;endFill=1;" edge="1" parent="1" source="p5" target="p6"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#4C72B0;endArrow=block;endFill=1;exitX=0.22;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p6" target="train"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#DD8452;endArrow=block;endFill=1;exitX=0.78;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p6" target="test"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8fa3b5;endArrow=block;endFill=1;" edge="1" parent="1" source="train" target="m1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8fa3b5;endArrow=block;endFill=1;" edge="1" parent="1" source="m1" target="m2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8fa3b5;endArrow=block;endFill=1;" edge="1" parent="1" source="m2" target="m3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8fa3b5;endArrow=block;endFill=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="m3" target="ev"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" value="held aside" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#DD8452;dashed=1;dashPattern=5 3;endArrow=block;endFill=1;fontSize=10;fontColor=#a8512a;labelBackgroundColor=#ffffff;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="test" target="ev"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#4C72B0;endArrow=block;endFill=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ev" target="sq1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#4C72B0;endArrow=block;endFill=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ev" target="sq2"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

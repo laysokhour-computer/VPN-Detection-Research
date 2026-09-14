@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 290" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="700" height="290" fill="#ffffff"/>
+
+  <!-- ============ A flow with bursts ============ -->
+  <text x="40" y="26" font-size="12" font-weight="600" fill="#333">A flow long enough to pause and resume</text>
+
+  <line x1="40" y1="72" x2="650" y2="72" stroke="#ddd" stroke-width="1"/>
+
+  <!-- burst 1: packets clustered -->
+  <rect x="52"  y="60" width="8" height="24" rx="2" fill="#4C72B0"/>
+  <rect x="68"  y="60" width="8" height="24" rx="2" fill="#4C72B0"/>
+  <rect x="82"  y="60" width="8" height="24" rx="2" fill="#4C72B0"/>
+  <rect x="99"  y="60" width="8" height="24" rx="2" fill="#4C72B0"/>
+  <rect x="113" y="60" width="8" height="24" rx="2" fill="#4C72B0"/>
+
+  <!-- burst 2 -->
+  <rect x="288" y="60" width="8" height="24" rx="2" fill="#4C72B0"/>
+  <rect x="303" y="60" width="8" height="24" rx="2" fill="#4C72B0"/>
+  <rect x="317" y="60" width="8" height="24" rx="2" fill="#4C72B0"/>
+
+  <!-- burst 3 -->
+  <rect x="500" y="60" width="8" height="24" rx="2" fill="#4C72B0"/>
+  <rect x="515" y="60" width="8" height="24" rx="2" fill="#4C72B0"/>
+  <rect x="530" y="60" width="8" height="24" rx="2" fill="#4C72B0"/>
+  <rect x="545" y="60" width="8" height="24" rx="2" fill="#4C72B0"/>
+
+  <!-- active spans -->
+  <rect x="52"  y="96" width="69"  height="18" rx="2" fill="#4C72B0" opacity="0.85"/>
+  <text x="86"  y="109" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">active</text>
+  <rect x="288" y="96" width="37"  height="18" rx="2" fill="#4C72B0" opacity="0.85"/>
+  <text x="306" y="109" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">active</text>
+  <rect x="500" y="96" width="53"  height="18" rx="2" fill="#4C72B0" opacity="0.85"/>
+  <text x="526" y="109" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">active</text>
+
+  <!-- idle spans -->
+  <rect x="121" y="96" width="167" height="18" rx="2" fill="#DD8452" opacity="0.85"/>
+  <text x="204" y="109" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">idle</text>
+  <rect x="325" y="96" width="175" height="18" rx="2" fill="#DD8452" opacity="0.85"/>
+  <text x="412" y="109" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">idle</text>
+
+  <text x="40" y="140" font-size="11" fill="#666">
+    Three active periods and two idle periods. The dataset records the minimum, mean, maximum and
+  </text>
+  <text x="40" y="156" font-size="11" fill="#666">
+    standard deviation of each.
+  </text>
+
+  <line x1="40" y1="178" x2="660" y2="178" stroke="#e3e3e3" stroke-width="1"/>
+
+  <!-- ============ A short flow ============ -->
+  <text x="40" y="206" font-size="12" font-weight="600" fill="#333">A short flow that never pauses</text>
+
+  <line x1="40" y1="242" x2="650" y2="242" stroke="#ddd" stroke-width="1"/>
+  <rect x="52" y="230" width="8" height="24" rx="2" fill="#4C72B0"/>
+  <rect x="67" y="230" width="8" height="24" rx="2" fill="#4C72B0"/>
+  <rect x="81" y="230" width="8" height="24" rx="2" fill="#4C72B0"/>
+
+  <rect x="52" y="262" width="45" height="18" rx="2" fill="#4C72B0" opacity="0.85"/>
+  <text x="74" y="275" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">active</text>
+
+  <text x="115" y="275" font-size="11" fill="#b35f2e">
+    No idle period ever begins, so the idle statistics are undefined and recorded as -1.
+  </text>
+
+  <defs/>
+</svg>

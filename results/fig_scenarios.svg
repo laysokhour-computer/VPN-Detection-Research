@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 256" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="620" height="256" fill="#ffffff"/>
+
+  <!-- ================= Scenario A ================= -->
+  <text x="30" y="22" font-size="12.5" font-weight="600" fill="#333">Scenario A &#8212; two steps</text>
+
+  <rect x="30" y="46" width="104" height="34" rx="3" fill="#f2f4f7" stroke="#c5cdd7"/>
+  <text x="82" y="67" font-size="11.5" fill="#333" text-anchor="middle">All flows</text>
+
+  <line x1="134" y1="63" x2="166" y2="63" stroke="#aaa" stroke-width="1" marker-end="url(#a)"/>
+
+  <!-- A1 : the stage used -->
+  <rect x="174" y="40" width="124" height="46" rx="3" fill="#4C72B0"/>
+  <text x="236" y="60" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">A1</text>
+  <text x="236" y="76" font-size="10.5" fill="#dde8f5" text-anchor="middle">VPN or non-VPN</text>
+
+  <!-- branches to A2 -->
+  <line x1="298" y1="52" x2="336" y2="34" stroke="#aaa" stroke-width="1" marker-end="url(#a)"/>
+  <line x1="298" y1="74" x2="336" y2="92" stroke="#aaa" stroke-width="1" marker-end="url(#a)"/>
+
+  <rect x="344" y="16" width="180" height="32" rx="3" fill="#f2f4f7" stroke="#c5cdd7"/>
+  <text x="434" y="36" font-size="10.5" fill="#777" text-anchor="middle">A2: which of 7 VPN types</text>
+
+  <rect x="344" y="78" width="180" height="32" rx="3" fill="#f2f4f7" stroke="#c5cdd7"/>
+  <text x="434" y="98" font-size="10.5" fill="#777" text-anchor="middle">A2: which of 7 non-VPN types</text>
+
+  <!-- divider -->
+  <line x1="30" y1="140" x2="590" y2="140" stroke="#e8e8e8" stroke-width="1"/>
+
+  <!-- ================= Scenario B ================= -->
+  <text x="30" y="168" font-size="12.5" font-weight="600" fill="#333">Scenario B &#8212; one step</text>
+
+  <rect x="30" y="184" width="104" height="34" rx="3" fill="#f2f4f7" stroke="#c5cdd7"/>
+  <text x="82" y="205" font-size="11.5" fill="#333" text-anchor="middle">All flows</text>
+
+  <line x1="134" y1="201" x2="166" y2="201" stroke="#aaa" stroke-width="1" marker-end="url(#a)"/>
+
+  <rect x="174" y="183" width="350" height="36" rx="3" fill="#f2f4f7" stroke="#c5cdd7"/>
+  <text x="349" y="206" font-size="10.5" fill="#777" text-anchor="middle">All 14 traffic types at once (7 VPN, 7 non-VPN)</text>
+
+  <!-- legend -->
+  <rect x="30" y="238" width="12" height="12" rx="2" fill="#4C72B0"/>
+  <text x="48" y="248" font-size="10.5" fill="#555">used in this study</text>
+
+  <rect x="180" y="238" width="12" height="12" rx="2" fill="#f2f4f7" stroke="#c5cdd7"/>
+  <text x="198" y="248" font-size="10.5" fill="#555">not used</text>
+
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#aaa"/></marker>
+  </defs>
+</svg>
